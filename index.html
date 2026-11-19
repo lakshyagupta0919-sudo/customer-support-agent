@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartSupport AI – Intelligent Customer Support Agent</title>
+  <meta name="description" content="Next-Generation AI Customer Support Agent with instant answers, order tracking, refund automation, and 24/7 intelligent assistance.">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Glow & Particles Container -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Announcement">
+    <div class="container announcement-content">
+      <span class="badge-pulse"><span class="pulse-dot"></span> System Status: Online</span>
+      <span>🚀 SmartSupport AI v2.4 is live — Instant resolutions in under 2 seconds!</span>
+      <a href="#order-tracker" class="announcement-link">Track Your Order <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </aside>
+
+  <!-- Sticky Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="SmartSupport AI Home">
+        <div class="logo-icon">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">SmartSupport<span class="brand-ai">AI</span></span>
+          <span class="brand-tag">Instant Assistant</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#topics" class="nav-link"><i class="fa-solid fa-layer-group"></i> Topics</a>
+        <a href="#order-tracker" class="nav-link"><i class="fa-solid fa-truck-fast"></i> Order Tracking</a>
+        <a href="#chat-section" class="nav-link"><i class="fa-solid fa-robot"></i> AI Chatbot</a>
+        <a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="btn btn-secondary-glass btn-sm" id="quickTrackNavBtn">
+          <i class="fa-solid fa-magnifying-glass"></i> Track Order
+        </button>
+        <button class="btn btn-primary-gradient btn-sm glow-btn" id="openChatNavBtn">
+          <i class="fa-solid fa-comments"></i> Launch Chat
+        </button>
+        
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="logo-text">
+        <span class="brand-name">SmartSupport<span class="brand-ai">AI</span></span>
+      </div>
+      <button class="close-drawer" id="closeDrawerBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-list">
+      <a href="#home" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="#topics" class="mobile-nav-item"><i class="fa-solid fa-layer-group"></i> Common Topics</a>
+      <a href="#order-tracker" class="mobile-nav-item"><i class="fa-solid fa-truck-fast"></i> Track Order Demo</a>
+      <a href="#chat-section" class="mobile-nav-item"><i class="fa-solid fa-robot"></i> AI Chatbot</a>
+      <a href="#faq" class="mobile-nav-item"><i class="fa-solid fa-circle-question"></i> FAQs</a>
+      <a href="#contact" class="mobile-nav-item"><i class="fa-solid fa-envelope"></i> Contact Support</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <button class="btn btn-primary-gradient w-100" id="mobileLaunchChat">
+        <i class="fa-solid fa-comments"></i> Start AI Chat
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <!-- Hero Text -->
+        <div class="hero-content">
+          <div class="badge-tag">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Autonomous Customer Care
+          </div>
+          
+          <h1 class="hero-title">
+            Welcome to <span class="gradient-text">SmartSupport AI</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Experience next-generation intelligent support. Resolve inquiries, track shipments in real time, process refunds, and get immediate answers with our advanced 24/7 AI agent.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#chat-section" class="btn btn-primary-gradient btn-lg glow-btn">
+              <i class="fa-solid fa-message-bot"></i> Try AI Chatbot
+            </a>
+            <a href="#order-tracker" class="btn btn-secondary-glass btn-lg">
+              <i class="fa-solid fa-box-open"></i> Live Order Tracking
+            </a>
+          </div>
+
+          <!-- Trust & Stats Pill Grid -->
+          <div class="hero-stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">99.4%</div>
+              <div class="stat-label">Resolution Rate</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">&lt; 1.8s</div>
+              <div class="stat-label">Avg. Response Time</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">24/7/365</div>
+              <div class="stat-label">Zero Wait Support</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Chat Showcase Card -->
+        <div class="hero-visual">
+          <div class="hero-card-glow">
+            <div class="hero-chat-widget glass-card">
+              <div class="chat-header-bar">
+                <div class="chat-agent-info">
+                  <div class="avatar-ring">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="SmartSupport AI Avatar" class="agent-avatar">
+                    <span class="status-indicator-green"></span>
+                  </div>
+                  <div>
+                    <h3 class="agent-name">SmartSupport AI <span class="badge-verified"><i class="fa-solid fa-shield-halved"></i> Official</span></h3>
+                    <p class="agent-sub">Powered by SmartSupport Natural Engine</p>
+                  </div>
+                </div>
+                <div class="header-actions">
+                  <span class="live-ping-pill"><span class="ping-dot"></span> Active</span>
+                </div>
+              </div>
+
+              <!-- Quick Mini Chat Messages Preview -->
+              <div class="hero-chat-messages" id="heroChatPreview">
+                <div class="chat-bubble bot-bubble">
+                  <div class="bubble-icon"><i class="fa-solid fa-robot"></i></div>
+                  <div class="bubble-body">
+                    <p>👋 Hello! I'm your SmartSupport AI agent. How can I make your day easier?</p>
+                    <span class="bubble-time">Just now</span>
+                  </div>
+                </div>
+
+                <div class="chat-bubble user-bubble">
+                  <div class="bubble-body">
+                    <p>Can you check the delivery status of my order?</p>
+                    <span class="bubble-time">Just now</span>
+                  </div>
+                </div>
+
+                <div class="chat-bubble bot-bubble">
+                  <div class="bubble-icon"><i class="fa-solid fa-robot"></i></div>
+                  <div class="bubble-body">
+                    <p>Absolutely! Enter your Order ID below or try our tracking demo to see real-time updates.</p>
+                    <div class="mini-bubble-actions">
+                      <button class="pill-chip-sm hero-chip" data-sample-order="ORD-7412">
+                        <i class="fa-solid fa-truck"></i> Check ORD-7412
+                      </button>
+                      <button class="pill-chip-sm hero-chip" data-ask="How do I get a refund?">
+                        <i class="fa-solid fa-receipt"></i> Refund Policy
+                      </button>
+                    </div>
+                    <span class="bubble-time">Just now</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Prompt Bar -->
+              <div class="hero-prompt-bar">
+                <input type="text" id="heroPromptInput" placeholder="Ask about refunds, orders, payments..." aria-label="Quick question">
+                <button id="heroSendBtn" class="btn-circle-send" aria-label="Send query">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMON SUPPORT TOPICS SECTION (REFUNDS, ORDERS, PAYMENTS, DELIVERY) -->
+    <section class="section topics-section" id="topics">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-compass"></i> Instant Solutions</span>
+          <h2 class="section-title">Common Support Categories</h2>
+          <p class="section-desc">Select a category to view instant guides or ask our AI agent directly with one click.</p>
+        </div>
+
+        <div class="topics-grid">
+          <!-- Card 1: Refunds -->
+          <div class="topic-card glass-card card-hover-purple" data-topic="refunds">
+            <div class="topic-icon-wrap icon-purple">
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+            <div class="topic-badge">Instant Policy</div>
+            <h3 class="topic-title">Refunds & Returns</h3>
+            <p class="topic-desc">Learn about our hassle-free 30-day money-back guarantee, return shipping labels, and payout timelines.</p>
+            <ul class="topic-feature-list">
+              <li><i class="fa-solid fa-check"></i> 30-Day risk-free returns</li>
+              <li><i class="fa-solid fa-check"></i> Payout in 3-5 business days</li>
+              <li><i class="fa-solid fa-check"></i> Instant automated approval</li>
+            </ul>
+            <div class="topic-footer">
+              <button class="btn btn-outline-purple btn-sm ask-topic-btn" data-query="How do I request a refund and what is the policy?">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI About Refunds
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Orders -->
+          <div class="topic-card glass-card card-hover-blue" data-topic="orders">
+            <div class="topic-icon-wrap icon-blue">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <div class="topic-badge">Self-Service</div>
+            <h3 class="topic-title">Order Management</h3>
+            <p class="topic-desc">Modify order items, change delivery address, cancel before dispatch, or download tax invoices.</p>
+            <ul class="topic-feature-list">
+              <li><i class="fa-solid fa-check"></i> 1-Click order cancellation</li>
+              <li><i class="fa-solid fa-check"></i> Update shipping address</li>
+              <li><i class="fa-solid fa-check"></i> Download PDF receipts</li>
+            </ul>
+            <div class="topic-footer">
+              <button class="btn btn-outline-blue btn-sm ask-topic-btn" data-query="How can I change my order or cancel it?">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI About Orders
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Payments -->
+          <div class="topic-card glass-card card-hover-emerald" data-topic="payments">
+            <div class="topic-icon-wrap icon-emerald">
+              <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <div class="topic-badge">Secure 256-Bit</div>
+            <h3 class="topic-title">Payments & Billing</h3>
+            <p class="topic-desc">Accepted payment options, failed transaction fixes, coupon codes, and corporate billing statements.</p>
+            <ul class="topic-feature-list">
+              <li><i class="fa-solid fa-check"></i> Visa, Mastercard, Apple Pay, PayPal</li>
+              <li><i class="fa-solid fa-check"></i> Instant failed payment retry</li>
+              <li><i class="fa-solid fa-check"></i> Zero transaction surcharges</li>
+            </ul>
+            <div class="topic-footer">
+              <button class="btn btn-outline-emerald btn-sm ask-topic-btn" data-query="What payment methods do you accept and what if my payment fails?">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI About Payments
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Delivery -->
+          <div class="topic-card glass-card card-hover-amber" data-topic="delivery">
+            <div class="topic-icon-wrap icon-amber">
+              <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+            <div class="topic-badge">Express & Standard</div>
+            <h3 class="topic-title">Shipping & Delivery</h3>
+            <p class="topic-desc">Real-time carrier updates, international shipping rules, customs fees, and express courier options.</p>
+            <ul class="topic-feature-list">
+              <li><i class="fa-solid fa-check"></i> Next-Day Priority delivery</li>
+              <li><i class="fa-solid fa-check"></i> 120+ Countries supported</li>
+              <li><i class="fa-solid fa-check"></i> Live driver tracking coordinates</li>
+            </ul>
+            <div class="topic-footer">
+              <button class="btn btn-outline-amber btn-sm ask-topic-btn" data-query="What are your shipping times and delivery rates?">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Ask AI About Delivery
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER TRACKING SECTION (WORKING DEMO) -->
+    <section class="section tracker-section" id="order-tracker">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-location-crosshairs"></i> Real-Time Logistics</span>
+          <h2 class="section-title">Live Order Tracking Demo</h2>
+          <p class="section-desc">Test our interactive order tracking system. Enter an Order ID or click a demo sample below to see the animated timeline.</p>
+        </div>
+
+        <div class="tracker-wrapper glass-card">
+          <!-- Input Controls -->
+          <div class="tracker-input-box">
+            <div class="search-field-group">
+              <i class="fa-solid fa-barcode barcode-icon"></i>
+              <input type="text" id="orderTrackingInput" placeholder="Enter Order ID (e.g. ORD-7412)" value="ORD-7412" autocomplete="off" aria-label="Order ID Input">
+              <button id="trackOrderBtn" class="btn btn-primary-gradient">
+                <i class="fa-solid fa-crosshairs"></i> Track Order
+              </button>
+            </div>
+
+            <!-- Sample IDs Pills -->
+            <div class="sample-orders">
+              <span class="sample-label">Try sample orders:</span>
+              <button class="sample-tag-btn" data-id="ORD-7412" title="Click to track"><span class="badge-dot dot-cyan"></span> ORD-7412 (Out for Delivery)</button>
+              <button class="sample-tag-btn" data-id="ORD-9821" title="Click to track"><span class="badge-dot dot-green"></span> ORD-9821 (Delivered)</button>
+              <button class="sample-tag-btn" data-id="ORD-3390" title="Click to track"><span class="badge-dot dot-purple"></span> ORD-3390 (In Transit)</button>
+              <button class="sample-tag-btn" data-id="ORD-1105" title="Click to track"><span class="badge-dot dot-amber"></span> ORD-1105 (Processing)</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Results Container -->
+          <div class="tracker-results" id="trackerResults">
+            <!-- Order Summary Banner -->
+            <div class="order-summary-banner">
+              <div class="summary-col">
+                <span class="col-title">Tracking Number</span>
+                <span class="col-val" id="dispTrackingNum">ORD-7412</span>
+              </div>
+              <div class="summary-col">
+                <span class="col-title">Estimated Delivery</span>
+                <span class="col-val text-accent" id="dispEstDelivery">Today by 4:30 PM</span>
+              </div>
+              <div class="summary-col">
+                <span class="col-title">Courier Partner</span>
+                <span class="col-val" id="dispCarrier">FedEx Priority Air</span>
+              </div>
+              <div class="summary-col">
+                <span class="col-title">Current Status</span>
+                <span class="col-val"><span class="status-pill status-out" id="dispStatusPill">Out for Delivery</span></span>
+              </div>
+            </div>
+
+            <!-- Animated Multi-Stage Timeline -->
+            <div class="timeline-container">
+              <div class="timeline-progress-bar">
+                <div class="timeline-progress-fill" id="timelineProgressFill" style="width: 75%;"></div>
+              </div>
+
+              <div class="timeline-steps" id="timelineSteps">
+                <!-- Step 1 -->
+                <div class="timeline-step completed" data-step="1">
+                  <div class="step-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                  <div class="step-label">Order Placed</div>
+                  <div class="step-time">Nov 17, 09:14 AM</div>
+                </div>
+                <!-- Step 2 -->
+                <div class="timeline-step completed" data-step="2">
+                  <div class="step-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+                  <div class="step-label">Processing</div>
+                  <div class="step-time">Nov 17, 02:40 PM</div>
+                </div>
+                <!-- Step 3 -->
+                <div class="timeline-step completed" data-step="3">
+                  <div class="step-icon"><i class="fa-solid fa-plane-departure"></i></div>
+                  <div class="step-label">Shipped</div>
+                  <div class="step-time">Nov 18, 08:30 AM</div>
+                </div>
+                <!-- Step 4 -->
+                <div class="timeline-step active" data-step="4">
+                  <div class="step-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                  <div class="step-label">Out for Delivery</div>
+                  <div class="step-time">Today, 08:15 AM</div>
+                </div>
+                <!-- Step 5 -->
+                <div class="timeline-step" data-step="5">
+                  <div class="step-icon"><i class="fa-solid fa-house-chimney-check"></i></div>
+                  <div class="step-label">Delivered</div>
+                  <div class="step-time">Expected by 4:30 PM</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Details Grid: Items and Driver Note -->
+            <div class="tracker-details-grid">
+              <!-- Items in package -->
+              <div class="detail-box glass-inner">
+                <h4 class="detail-heading"><i class="fa-solid fa-box"></i> Package Items</h4>
+                <div class="order-items-list" id="dispItemsList">
+                  <div class="order-item-row">
+                    <div class="item-img-placeholder"><i class="fa-solid fa-headphones-simple"></i></div>
+                    <div class="item-meta">
+                      <div class="item-name">AeroPulse Pro Noise-Cancelling Headphones</div>
+                      <div class="item-sub">Space Silver &bull; Qty: 1 &bull; Warranty Included</div>
+                    </div>
+                    <div class="item-price">$249.00</div>
+                  </div>
+                  <div class="order-item-row">
+                    <div class="item-img-placeholder"><i class="fa-solid fa-charging-station"></i></div>
+                    <div class="item-meta">
+                      <div class="item-name">Magnetic Fast Charging Dock</div>
+                      <div class="item-sub">Matte Black &bull; Qty: 1</div>
+                    </div>
+                    <div class="item-price">$49.00</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Driver Coordinates & Actions -->
+              <div class="detail-box glass-inner">
+                <h4 class="detail-heading"><i class="fa-solid fa-map-location-dot"></i> Courier Note & Contact</h4>
+                <div class="courier-note-box">
+                  <div class="courier-driver">
+                    <div class="driver-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <div>
+                      <div class="driver-name" id="dispDriverName">Courier: Marcus Vance</div>
+                      <div class="driver-vehicle" id="dispVehicle">Vehicle: Electric Delivery Van #402</div>
+                    </div>
+                  </div>
+                  <p class="courier-msg" id="dispCourierMsg">"Package is in final transit. Gate code 4092 received. Signature will be required upon handover."</p>
+                </div>
+                
+                <div class="tracker-action-buttons">
+                  <button class="btn btn-secondary-glass btn-sm" id="btnNotifySms">
+                    <i class="fa-solid fa-bell"></i> Enable Live Alerts
+                  </button>
+                  <button class="btn btn-outline-purple btn-sm" id="btnAskAiAboutOrder">
+                    <i class="fa-solid fa-robot"></i> Ask AI About This Order
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL INTERACTIVE CHATBOT SECTION -->
+    <section class="section chat-standalone-section" id="chat-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-microchip"></i> Smart Assistant</span>
+          <h2 class="section-title">Interactive AI Support Agent</h2>
+          <p class="section-desc">Ask anything about refunds, order status, payment options, shipping times, or request a human specialist.</p>
+        </div>
+
+        <div class="full-chatbot-container glass-card">
+          <!-- Chatbot Sidebar with quick actions -->
+          <div class="chat-sidebar">
+            <div class="sidebar-header">
+              <div class="ai-avatar-pulse">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <div>
+                <h4 class="sidebar-title">SmartSupport AI</h4>
+                <p class="sidebar-status"><span class="pulse-dot"></span> Ready to assist</p>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h5 class="sidebar-heading">Quick Prompts</h5>
+              <div class="quick-prompts-list">
+                <button class="prompt-chip-btn" data-query="How do I get a refund for my order?">
+                  <i class="fa-solid fa-arrow-rotate-left"></i> How to get a refund?
+                </button>
+                <button class="prompt-chip-btn" data-query="Where is my order and how do I track it?">
+                  <i class="fa-solid fa-magnifying-glass-location"></i> Track my package
+                </button>
+                <button class="prompt-chip-btn" data-query="What payment methods do you accept?">
+                  <i class="fa-solid fa-credit-card"></i> Accepted payment methods
+                </button>
+                <button class="prompt-chip-btn" data-query="How long does standard and express shipping take?">
+                  <i class="fa-solid fa-truck"></i> Delivery times & rates
+                </button>
+                <button class="prompt-chip-btn" data-query="Can I speak to a human representative?">
+                  <i class="fa-solid fa-headset"></i> Connect to live human agent
+                </button>
+                <button class="prompt-chip-btn" data-query="Can I cancel or edit my order?">
+                  <i class="fa-solid fa-pen-to-square"></i> Modify or cancel order
+                </button>
+              </div>
+            </div>
+
+            <div class="sidebar-footer">
+              <button class="btn btn-secondary-glass btn-sm w-100" id="clearMainChatBtn">
+                <i class="fa-solid fa-trash-can"></i> Clear Conversation
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Chat Window -->
+          <div class="chat-main-window">
+            <!-- Chat Window Header -->
+            <div class="chat-window-header">
+              <div class="chat-identity">
+                <span class="active-badge">Online</span>
+                <span class="chat-mode">Natural Language Assistant</span>
+              </div>
+              <div class="chat-controls">
+                <button class="icon-tool-btn" id="soundToggleBtn" title="Toggle Sound Feedback">
+                  <i class="fa-solid fa-volume-high" id="soundIcon"></i>
+                </button>
+                <button class="icon-tool-btn" id="exportChatBtn" title="Download Conversation Log">
+                  <i class="fa-solid fa-download"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Messages Log Container -->
+            <div class="chat-messages-body" id="mainChatMessages">
+              <!-- Welcome Bot Message -->
+              <div class="chat-bubble bot-bubble">
+                <div class="bubble-icon"><i class="fa-solid fa-brain"></i></div>
+                <div class="bubble-body">
+                  <p><strong>Welcome to SmartSupport AI! 🌟</strong></p>
+                  <p>I am your autonomous support agent. I can help you with:</p>
+                  <ul class="bot-feature-points">
+                    <li>📦 <strong>Order Tracking</strong> & status updates</li>
+                    <li>💰 <strong>Refunds</strong> & return guidelines</li>
+                    <li>💳 <strong>Payments</strong>, invoices & card declines</li>
+                    <li>🚚 <strong>Shipping</strong> times & address modifications</li>
+                  </ul>
+                  <p>Feel free to type any query below or tap one of the suggested buttons to get started!</p>
+                  <span class="bubble-time" id="initBotTime">12:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Typing Indicator (Hidden by default) -->
+            <div class="typing-indicator-row hidden" id="typingIndicator">
+              <div class="bubble-icon"><i class="fa-solid fa-robot"></i></div>
+              <div class="typing-bubble">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+
+            <!-- Chat Input Form -->
+            <form class="chat-input-form" id="mainChatForm">
+              <div class="chat-input-wrapper">
+                <input 
+                  type="text" 
+                  id="mainChatInput" 
+                  placeholder="Ask a question (e.g. 'How do refunds work?' or 'Where is my order?')" 
+                  autocomplete="off"
+                  required
+                >
+                <div class="input-actions">
+                  <button type="button" class="btn-input-icon" id="voiceMicBtn" title="Simulate voice input">
+                    <i class="fa-solid fa-microphone"></i>
+                  </button>
+                  <button type="submit" class="btn btn-primary-gradient btn-send" id="mainChatSubmitBtn" aria-label="Send message">
+                    <span>Send</span> <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS (FAQ) SECTION -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Help Center</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Search through our verified knowledge base or filter by category.</p>
+        </div>
+
+        <!-- FAQ Search & Filter Tabs -->
+        <div class="faq-controls-bar">
+          <div class="faq-search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="faqSearchInput" placeholder="Filter questions by keywords (e.g. refund, delivery, card)..." aria-label="Search FAQs">
+            <button class="clear-faq-search hidden" id="clearFaqSearch" aria-label="Clear search">&times;</button>
+          </div>
+
+          <div class="faq-filter-tabs">
+            <button class="faq-tab active" data-category="all">All Topics</button>
+            <button class="faq-tab" data-category="refunds">Refunds</button>
+            <button class="faq-tab" data-category="orders">Orders</button>
+            <button class="faq-tab" data-category="payments">Payments</button>
+            <button class="faq-tab" data-category="delivery">Delivery</button>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion List -->
+        <div class="faq-accordion-list" id="faqAccordionList">
+          <!-- Item 1: Refunds -->
+          <div class="faq-item glass-card" data-category="refunds">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-icon-pill"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+              <span class="faq-q-text">What is your refund policy and how do I initiate a return?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-inner">
+                <p>We provide a <strong>30-day money-back guarantee</strong> on all physical and digital merchandise. If you are not completely satisfied, you can initiate a return through our self-service portal or by asking our AI agent above.</p>
+                <p>Once your item is received at our fulfillment center, your refund will be processed back to your original payment method within <strong>3 to 5 business days</strong>.</p>
+                <div class="faq-feedback">
+                  <span>Was this helpful?</span>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-up"></i> Yes</button>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-down"></i> No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Refunds status -->
+          <div class="faq-item glass-card" data-category="refunds">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-icon-pill"><i class="fa-solid fa-receipt"></i></span>
+              <span class="faq-q-text">Where is my approved refund? When will it appear in my bank account?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-inner">
+                <p>After our system confirms the refund, financial institutions typically take <strong>3-7 business days</strong> to credit the funds back to your account. For PayPal or digital wallets, credits usually reflect within 24 hours.</p>
+                <div class="faq-feedback">
+                  <span>Was this helpful?</span>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-up"></i> Yes</button>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-down"></i> No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Orders edit/cancel -->
+          <div class="faq-item glass-card" data-category="orders">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-icon-pill"><i class="fa-solid fa-boxes-stacked"></i></span>
+              <span class="faq-q-text">Can I change my delivery address or cancel my order after placing it?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-inner">
+                <p>Orders can be modified or cancelled within <strong>60 minutes</strong> of placement, provided they have not entered the packaging or dispatch phase. To change your address quickly, enter your Order ID into our tracker above or ask our AI agent to "Update shipping address".</p>
+                <div class="faq-feedback">
+                  <span>Was this helpful?</span>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-up"></i> Yes</button>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-down"></i> No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Orders missing confirmation -->
+          <div class="faq-item glass-card" data-category="orders">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-icon-pill"><i class="fa-solid fa-envelope-open-text"></i></span>
+              <span class="faq-q-text">I did not receive an order confirmation email. What should I do?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-inner">
+                <p>Please check your email spam/junk folder. If you still cannot locate it, you can look up your order using your email address through the SmartSupport AI chatbot or contact our support team with your transaction details.</p>
+                <div class="faq-feedback">
+                  <span>Was this helpful?</span>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-up"></i> Yes</button>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-down"></i> No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Payments methods -->
+          <div class="faq-item glass-card" data-category="payments">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-icon-pill"><i class="fa-solid fa-credit-card"></i></span>
+              <span class="faq-q-text">What payment methods do you accept? Are transactions secure?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-inner">
+                <p>We accept all major credit/debit cards (Visa, MasterCard, American Express, Discover), PayPal, Apple Pay, Google Pay, and Klarna buy-now-pay-later. All payment transactions are encrypted with <strong>bank-grade 256-bit SSL encryption</strong> and PCI-DSS Level 1 compliance.</p>
+                <div class="faq-feedback">
+                  <span>Was this helpful?</span>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-up"></i> Yes</button>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-down"></i> No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Payments failed -->
+          <div class="faq-item glass-card" data-category="payments">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-icon-pill"><i class="fa-solid fa-triangle-exclamation"></i></span>
+              <span class="faq-q-text">My card was declined or payment failed. How do I fix this?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-inner">
+                <p>Common causes of failed charges include minor postal code typos, 3D Secure verification timeouts, or bank anti-fraud blocks. Verify your billing address matches your card issuer records or retry with PayPal or an alternate card.</p>
+                <div class="faq-feedback">
+                  <span>Was this helpful?</span>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-up"></i> Yes</button>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-down"></i> No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: Delivery times -->
+          <div class="faq-item glass-card" data-category="delivery">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-icon-pill"><i class="fa-solid fa-clock"></i></span>
+              <span class="faq-q-text">How long does delivery take and what are the shipping options?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-inner">
+                <p>We offer two main delivery tiers:</p>
+                <ul>
+                  <li><strong>Standard Ground Shipping:</strong> 3–5 business days (Free on orders over $50).</li>
+                  <li><strong>Express Air Courier:</strong> 1–2 business days ($14.99 flat rate).</li>
+                </ul>
+                <p>International shipments typically arrive in 7–12 business days depending on customs clearance.</p>
+                <div class="faq-feedback">
+                  <span>Was this helpful?</span>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-up"></i> Yes</button>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-down"></i> No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8: Delivery delayed -->
+          <div class="faq-item glass-card" data-category="delivery">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span class="faq-icon-pill"><i class="fa-solid fa-person-circle-exclamation"></i></span>
+              <span class="faq-q-text">What should I do if my package shows delivered but I haven't received it?</span>
+              <i class="fa-solid fa-chevron-down faq-arrow"></i>
+            </button>
+            <div class="faq-answer-pane">
+              <div class="faq-answer-inner">
+                <p>Sometimes couriers scan packages prematurely when reaching the local distribution hub. Check porches, mail lockers, or with neighbors. If it has not shown up within 24 hours of delivery notification, trigger an instant trace via our chatbot or contact form below for an expedited replacement or refund.</p>
+                <div class="faq-feedback">
+                  <span>Was this helpful?</span>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-up"></i> Yes</button>
+                  <button class="btn-helpful"><i class="fa-regular fa-thumbs-down"></i> No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-empty-state hidden" id="faqEmptyState">
+          <i class="fa-solid fa-circle-nodes"></i>
+          <h4>No matching questions found</h4>
+          <p>Try searching with another keyword or ask our AI chatbot directly.</p>
+          <a href="#chat-section" class="btn btn-secondary-glass btn-sm">Ask SmartSupport AI</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SUPPORT FORM SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-headset"></i> Human Escalation</span>
+          <h2 class="section-title">Contact Support Team</h2>
+          <p class="section-desc">Need specialized assistance? Submit a ticket and our senior concierge engineers will reply in under 15 minutes.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Cards -->
+          <div class="contact-info-column">
+            <div class="glass-card contact-detail-card">
+              <div class="contact-icon-bubble">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <h3 class="contact-card-title">Priority Support Channel</h3>
+              <p class="contact-card-text">Our SmartSupport AI automatically triages all inquiries, flagging critical issues for immediate VIP team intervention.</p>
+              
+              <div class="contact-badges-list">
+                <div class="c-badge-item">
+                  <i class="fa-solid fa-envelope-circle-check"></i>
+                  <div>
+                    <strong>Direct Email</strong>
+                    <span>support@smartsupportai.io</span>
+                  </div>
+                </div>
+                <div class="c-badge-item">
+                  <i class="fa-solid fa-phone-volume"></i>
+                  <div>
+                    <strong>Emergency Phone Line</strong>
+                    <span>+1 (800) 555-SMART (Toll-Free)</span>
+                  </div>
+                </div>
+                <div class="c-badge-item">
+                  <i class="fa-solid fa-clock-rotate-left"></i>
+                  <div>
+                    <strong>Response Guarantee</strong>
+                    <span>Under 15 minutes average</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini Quote Box -->
+              <div class="concierge-quote-box">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p>"SmartSupport AI resolved 92% of our customer queries automatically on day one."</p>
+                <span class="quote-author">&mdash; Elena Rostov, VP Customer Success</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Functional Contact Form -->
+          <div class="contact-form-column">
+            <div class="glass-card form-container">
+              <h3 class="form-title"><i class="fa-solid fa-paper-plane"></i> Submit a Support Ticket</h3>
+              <p class="form-subtitle">Fill in the details below. You will receive an instant confirmation and live ticket ID.</p>
+
+              <form id="supportContactForm" novalidate>
+                <div class="form-row-2">
+                  <!-- Name -->
+                  <div class="form-group">
+                    <label for="contactName" class="form-label">Full Name <span class="required">*</span></label>
+                    <div class="input-with-icon">
+                      <i class="fa-solid fa-user"></i>
+                      <input type="text" id="contactName" name="name" placeholder="John Doe" required>
+                    </div>
+                    <span class="field-error" id="nameError"></span>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="form-group">
+                    <label for="contactEmail" class="form-label">Email Address <span class="required">*</span></label>
+                    <div class="input-with-icon">
+                      <i class="fa-solid fa-at"></i>
+                      <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <span class="field-error" id="emailError"></span>
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <!-- Order ID (optional) -->
+                  <div class="form-group">
+                    <label for="contactOrderId" class="form-label">Order ID (If applicable)</label>
+                    <div class="input-with-icon">
+                      <i class="fa-solid fa-barcode"></i>
+                      <input type="text" id="contactOrderId" name="orderId" placeholder="e.g. ORD-7412">
+                    </div>
+                  </div>
+
+                  <!-- Category -->
+                  <div class="form-group">
+                    <label for="contactCategory" class="form-label">Inquiry Category <span class="required">*</span></label>
+                    <div class="input-with-icon">
+                      <i class="fa-solid fa-tag"></i>
+                      <select id="contactCategory" name="category" required>
+                        <option value="" disabled selected>Select issue category</option>
+                        <option value="refund">Refunds & Returns</option>
+                        <option value="order">Order Modification / Cancellation</option>
+                        <option value="payment">Billing & Payment Issue</option>
+                        <option value="delivery">Shipping & Package Delivery</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="other">Other Inquiry</option>
+                      </select>
+                    </div>
+                    <span class="field-error" id="categoryError"></span>
+                  </div>
+                </div>
+
+                <!-- Priority Selection -->
+                <div class="form-group">
+                  <label class="form-label">Priority Level</label>
+                  <div class="priority-radio-group">
+                    <label class="priority-badge">
+                      <input type="radio" name="priority" value="Normal" checked>
+                      <span class="radio-custom"><i class="fa-solid fa-leaf"></i> Normal (24h)</span>
+                    </label>
+                    <label class="priority-badge">
+                      <input type="radio" name="priority" value="High">
+                      <span class="radio-custom high"><i class="fa-solid fa-fire-flame-curved"></i> High (2-4h)</span>
+                    </label>
+                    <label class="priority-badge">
+                      <input type="radio" name="priority" value="Urgent">
+                      <span class="radio-custom urgent"><i class="fa-solid fa-triangle-exclamation"></i> Urgent (&lt;15m)</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label">Detailed Description <span class="required">*</span></label>
+                  <textarea id="contactMessage" name="message" rows="4" placeholder="Please describe what you need assistance with..." required></textarea>
+                  <div class="textarea-bottom">
+                    <span class="field-error" id="messageError"></span>
+                    <span class="char-count" id="charCount">0 / 500 characters</span>
+                  </div>
+                </div>
+
+                <!-- File Attachment Mock -->
+                <div class="form-group">
+                  <label class="form-label">Attach File or Screenshot (Optional)</label>
+                  <div class="file-dropzone" id="fileDropzone">
+                    <input type="file" id="fileAttachment" class="file-hidden-input" accept="image/*,.pdf,.doc,.docx">
+                    <div class="dropzone-text">
+                      <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+                      <span id="dropzoneLabel">Drag and drop or <strong class="link-span">browse files</strong></span>
+                      <small class="file-tip">Supports PNG, JPG, PDF up to 10MB</small>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary-gradient btn-lg w-100 glow-btn" id="submitTicketBtn">
+                  <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Submit Ticket Now</span>
+                  <span class="btn-spinner hidden"><i class="fa-solid fa-spinner fa-spin"></i> Processing...</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SUCCESS TICKET MODAL -->
+  <div class="modal-backdrop hidden" id="ticketModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card glass-card">
+      <div class="modal-header">
+        <div class="modal-success-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <button class="modal-close-btn" id="closeTicketModal" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body text-center">
+        <h3 class="modal-title" id="modalTitle">Ticket Submitted Successfully!</h3>
+        <p class="modal-subtitle">Our AI triaging agent has registered your request. Here are your ticket details:</p>
+
+        <div class="ticket-slip">
+          <div class="ticket-row">
+            <span>Ticket Number:</span>
+            <strong class="ticket-id" id="modalTicketId">#TKT-89412</strong>
+          </div>
+          <div class="ticket-row">
+            <span>Contact Name:</span>
+            <strong id="modalContactName">John Doe</strong>
+          </div>
+          <div class="ticket-row">
+            <span>Email:</span>
+            <strong id="modalContactEmail">john@example.com</strong>
+          </div>
+          <div class="ticket-row">
+            <span>Category:</span>
+            <strong id="modalCategory">Refunds & Returns</strong>
+          </div>
+          <div class="ticket-row">
+            <span>Priority:</span>
+            <span class="priority-pill" id="modalPriority">Urgent</span>
+          </div>
+          <div class="ticket-row">
+            <span>Est. Response:</span>
+            <strong class="text-accent">Under 15 minutes</strong>
+          </div>
+        </div>
+
+        <p class="ticket-footnote">A confirmation email with tracking link has been sent to your inbox.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary-glass" id="modalCloseAction">Done</button>
+        <button class="btn btn-primary-gradient" id="modalAskAiAction">
+          <i class="fa-solid fa-robot"></i> Follow Up in AI Chat
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING PERSISTENT CHATBOT WIDGET -->
+  <div class="floating-chat-container" id="floatingChatContainer">
+    <!-- Floating Trigger Bubble Button -->
+    <button class="floating-chat-toggle" id="floatingChatToggle" aria-label="Open SmartSupport AI chat">
+      <div class="toggle-icon-wrap">
+        <i class="fa-solid fa-comments icon-chat"></i>
+        <i class="fa-solid fa-xmark icon-close"></i>
+      </div>
+      <span class="floating-chat-ping"></span>
+      <span class="floating-tooltip">Ask SmartSupport AI</span>
+    </button>
+
+    <!-- Floating Chat Window Window Pane -->
+    <div class="floating-chat-box glass-card hidden" id="floatingChatBox">
+      <!-- Floating Header -->
+      <div class="floating-header">
+        <div class="floating-bot-info">
+          <div class="floating-avatar">
+            <i class="fa-solid fa-robot"></i>
+            <span class="online-indicator"></span>
+          </div>
+          <div>
+            <h4 class="floating-title">SmartSupport AI</h4>
+            <span class="floating-subtitle">Always here to help 24/7</span>
+          </div>
+        </div>
+        <div class="floating-actions">
+          <button class="icon-tool-btn-sm" id="minimizeFloatingChat" title="Minimize">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Floating Quick Topic Chips -->
+      <div class="floating-chips-scroll">
+        <button class="float-chip" data-ask="How do I get a refund?">Refunds</button>
+        <button class="float-chip" data-ask="Track order ORD-7412">Track ORD-7412</button>
+        <button class="float-chip" data-ask="What payment methods do you accept?">Payments</button>
+        <button class="float-chip" data-ask="What are delivery times?">Shipping</button>
+      </div>
+
+      <!-- Floating Messages Area -->
+      <div class="floating-messages-area" id="floatingMessages">
+        <div class="chat-bubble bot-bubble">
+          <div class="bubble-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="bubble-body">
+            <p>Hi there! 👋 How can SmartSupport AI assist you today?</p>
+            <span class="bubble-time">Just now</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Typing Indicator -->
+      <div class="floating-typing hidden" id="floatingTyping">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <!-- Floating Input Bar -->
+      <form class="floating-input-form" id="floatingChatForm">
+        <input type="text" id="floatingChatInput" placeholder="Type your message..." autocomplete="off" required>
+        <button type="submit" class="floating-send-btn" aria-label="Send message">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text mb-2">
+          <span class="brand-name">SmartSupport<span class="brand-ai">AI</span></span>
+        </div>
+        <p class="footer-text">
+          Next-generation intelligent customer support agent platform. Empowering customers with instant self-service, autonomous order routing, and rapid resolution.
+        </p>
+        <div class="footer-social-links">
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="social-link" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Features</h4>
+        <ul class="footer-links">
+          <li><a href="#chat-section">AI Chatbot Agent</a></li>
+          <li><a href="#order-tracker">Real-Time Order Tracking</a></li>
+          <li><a href="#topics">Instant Refund Portal</a></li>
+          <li><a href="#faq">Knowledge Base FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Support Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#topics" class="cat-link" data-cat="refunds">Refund Policies</a></li>
+          <li><a href="#topics" class="cat-link" data-cat="orders">Order Modifications</a></li>
+          <li><a href="#topics" class="cat-link" data-cat="payments">Payment Security</a></li>
+          <li><a href="#topics" class="cat-link" data-cat="delivery">Worldwide Shipping</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">System Status</h4>
+        <div class="status-box">
+          <div class="status-line">
+            <span class="status-indicator-green"></span>
+            <span>All AI Models Operational</span>
+          </div>
+          <div class="status-metric">
+            <small>Uptime: <strong>99.99%</strong> &bull; Latency: <strong>180ms</strong></small>
+          </div>
+        </div>
+        <button class="btn btn-secondary-glass btn-sm w-100 mt-2" id="footerChatBtn">
+          <i class="fa-solid fa-headset"></i> Open Live Assistant
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 SmartSupport AI. Built with precision and care. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
